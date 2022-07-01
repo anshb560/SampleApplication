@@ -60,6 +60,7 @@ jobs:
   build-and-deploy:
     name: Build and deploy
     runs-on: windows-2019
+    needs: [analyze]
     steps:
     - uses: actions/checkout@v2
     
