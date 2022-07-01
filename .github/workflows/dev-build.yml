@@ -1,13 +1,14 @@
-name: Build and Deploy
+name: dev - build and deploy
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
 
 env:
   SLN_WEBAPP_NAME: SimpleFrameworkApp.sln     # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: 'published'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_WEBAPP_PACKAGE_PATH: 'published'    # set this to the path to your web app project, defaults to the repository root
 
 jobs:
   build:
