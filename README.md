@@ -1,4 +1,4 @@
-[![dev - build and deploy](https://github.com/anshb560/SampleApplication/actions/workflows/dev-build-deploy.yml/badge.svg)](https://github.com/anshb560/SampleApplication/actions/workflows/dev-build-deploy.yml)
+[![dev - build and deploy](https://github.com/anshb560/SampleApplication/actions/workflows/dev-build-deploy.yml/badge.svg)](https://github.com/anshb560/SampleApplication/actions/workflows/dev-build-deploy.yml)  [![CodeQL](https://github.com/anshb560/SampleApplication/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/anshb560/SampleApplication/actions/workflows/codeql-analysis.yml)
 
 
 # SimpleFrameworkApp
