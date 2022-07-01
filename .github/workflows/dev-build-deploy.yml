@@ -20,7 +20,7 @@ env:
   
 
 jobs:
-  build:
+  build-and-deploy:
     name: Build and deploy
     runs-on: windows-2019
     steps:
@@ -56,7 +56,7 @@ jobs:
         initial_status: in_progress
         token: ${{ secrets.GIT_PAT }}   
         environment: ${{ env.SLOT_NAME }}
-  deploy:
+  
     - name: Update deployment status (success)
       if: success()
       uses: chrnorm/deployment-status@releases/v1
