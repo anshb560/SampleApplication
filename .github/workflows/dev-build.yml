@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Setup MSBuild Path
+    - name: Seting up MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
       #with:
       #  vs-version: "[16.4,16.9)"
