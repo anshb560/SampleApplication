@@ -2,13 +2,9 @@ name: dev - build and deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - develop
-
   pull_request:
     branches:
-      - develop
+      - main
 
 env:
   #AZURE_WEBAPP_NAME:    # set this to your application's name
