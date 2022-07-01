@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - develop1
-      #- feature/**
+
+  pull_request:
+    branches:
+      - develop1
 
 env:
   #AZURE_WEBAPP_NAME:    # set this to your application's name
@@ -21,7 +24,7 @@ env:
 jobs:
   unittest:
     name: Unit Test
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
 
@@ -30,8 +33,9 @@ jobs:
 
   analyze:
     name: SAST CodeQL
-    runs-on: windows-2019
-    
+    runs-on: windows-latest
+    run_if: false
+
     permissions:
       actions: read
       contents: read
@@ -67,7 +71,7 @@ jobs:
 
   build-publish-deploy:
     name: Build-Publish-Deploy
-    runs-on: windows-2019
+    runs-on: windows-latest
     needs: [unittest,analyze]
     steps:
     - uses: actions/checkout@v2
