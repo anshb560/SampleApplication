@@ -2,11 +2,9 @@ name: dev - build and deploy
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
-
+    branches:
+      - main
 env:
   #AZURE_WEBAPP_NAME:    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: 'publish'      # set this to the path to your web app project, defaults to the repository root
