@@ -2,10 +2,10 @@ name: Bump version
 on:
   pull_request:
     branches:
-      - main
+      - develop-07052022
   push:
     branches:
-      - main
+      - develop-07052022
 
 jobs:
   build:
