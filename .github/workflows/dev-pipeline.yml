@@ -6,7 +6,7 @@ on:
     branches:
       - develop-07052022
 env:
-  WEBAPP_SLN_PATH: './sma/SMA.sln'   #Set Path of your Application Sln file
+  WEBAPP_SLN_PATH: './SimpleFrameworkApp.sln'   #Set Path of your Application Sln file
   
   AZURE_WEBAPP_PACKAGE_PATH: 'publish'      # set this to the path to your web app project, defaults to the repository root
   
