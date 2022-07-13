@@ -82,11 +82,11 @@ jobs:
     - name: Seting up MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
       
-    working-directory: '*'    
+    working-directory: '.nuget\Nuget.config'    
     - name: Replace PKG Credentials
       run: |
             powershell
-            <((Get-Content -Path '*\.nuget\Nuget.config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '*\.nuget\Nuget.config'>
+            <((Get-Content -Path '.nuget\Nuget.config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '.nuget\Nuget.config'>
             exit 
             
     - name: Setup NuGet
