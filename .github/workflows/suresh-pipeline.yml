@@ -35,6 +35,8 @@ jobs:
       run: |
             powershell
             (Get-Content -Path '.nuget\Nuget.config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '.nuget\Nuget.config'
+            $show =  Get-Content -Path '.nuget\Nuget.config' 
+            $show
             exit 
             
     - name: Setup NuGet
