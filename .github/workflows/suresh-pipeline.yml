@@ -82,7 +82,7 @@ jobs:
     - name: Seting up MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
       
-      working-directory: '.nuget/Nuget.Config'    
+      #working-directory: '.nuget/Nuget.Config'    
     - name: Replace PKG Credentials
       run: |
             powershell
