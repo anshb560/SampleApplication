@@ -20,61 +20,9 @@ env:
   
 
 jobs:
-  unittest:
-    name: Unit Test
-    runs-on: windows-latest
-    if: ${{ true }}
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Unit Test not ready
-      run: echo "Unit Test not ready"
-
-    - name: Setup VSTest
-      uses: darenm/Setup-VSTest@v1
-
-  analyze:
-    name: SAST CodeQL
-    runs-on: windows-latest
-   #if: ${{ false }}
-
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'csharp' ]
-        
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
-        
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-
-    #- name: Quality Gate Check
-    #  uses: corp-ais/quality-gate-action@main
-    #  with:
-    #    repository: corp-ais/DotnetInternalSampleLib
-    #    severity: critical
-    #  env:
-    #    GITHUB_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
-
-  build-publish-deploy1:
+  build-deploy:
     name: Build-Publish-Deploy1
     runs-on: windows-latest
-    needs: [analyze,unittest]
     if: ${{ true }}
     steps:
     - uses: actions/checkout@v2
