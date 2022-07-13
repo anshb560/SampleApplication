@@ -31,7 +31,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
               
     - name: Replace PKG Credentials
-      working-directory: .nuget\Nuget.config
+      working-directory: .
       run: |
             powershell
             <((Get-Content -Path '.nuget\Nuget.config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '.nuget\Nuget.config'>
