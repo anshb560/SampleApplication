@@ -34,9 +34,9 @@ jobs:
       working-directory: .
       run: |
             powershell
-            $ShowBefore = Get-Content -Path '.nuget\Nuget.config'
-            $ShowBefore
-            ( $ShowBefore -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '.nuget\Nuget.config'
+            $show =  Get-Content -Path '.nuget\Nuget.config' 
+            $show
+            (Get-Content -Path '.nuget\Nuget.config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -Path '.nuget\Nuget.config'
             $show =  Get-Content -Path '.nuget\Nuget.config' 
             $show
             exit 
