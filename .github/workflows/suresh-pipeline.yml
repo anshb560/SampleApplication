@@ -81,11 +81,12 @@ jobs:
     
     - name: Seting up MSBuild Path
       uses: microsoft/setup-msbuild@v1.1
-    
+      
+      working-directory: 'D:\GithubRepo\SampleApplication\.nuget\Nuget.Config'    
     - name: Replace PKG Credentials
       run: |
             powershell
-            <(Get-Content -Path 'D:\GithubRepo\SampleApplication\.nuget\Nuget.Config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -FilePath 'D:\GithubRepo\SampleApplication\.nuget\Nuget.config'>
+            <(Get-Content -Path '.nuget\Nuget.Config' -Raw).Replace('{user}','${{secrets.NU_PKG_USER}}').Replace('{token}','${{secrets.NU_PKG_TOKEN}}') | Set-Content -FilePath '.nuget\Nuget.config'>
             exit 
             
     - name: Setup NuGet
